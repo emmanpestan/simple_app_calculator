@@ -9,8 +9,15 @@ class InputHandler:
 
         choice = input("Choose an operation: ")
 
-        if choice not in ["1","2","3","4","5"]
+        if choice not in ["1","2","3","4","5"]:
             raise ValueError("Select only from the the operation choice")
     
         return choice
     
+    def get_numbers(self, message):
+        while True:
+            try:
+                num = float(input(message))
+                return num
+            except ValueError:
+                print("Invalid input. Please enter a valid number.")
